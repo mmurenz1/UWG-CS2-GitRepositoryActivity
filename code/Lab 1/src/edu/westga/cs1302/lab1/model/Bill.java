@@ -8,6 +8,10 @@ import java.util.ArrayList;
  * @version Fall 2025
  */
 public class Bill {
+	
+	public static final double TAX_RATE = 0.1;
+    public static final double TIP_RATE = 0.2;
+    
 	private ArrayList<BillItem> items;
 	
 	/** Create a new empty Bill
@@ -51,8 +55,8 @@ public class Bill {
 		
 		text += System.lineSeparator();
 		text += "SUBTOTAL - $" + subTotal + System.lineSeparator();
-		double tax = subTotal * 0.1;
-		double tip = subTotal * 0.2;
+		double tax = subTotal * TAX_RATE;
+		double tip = subTotal * TIP_RATE;
 		text += "TAX - $" + tax + System.lineSeparator();
 		text += "TIP - $" + tip + System.lineSeparator();
 		text += "TOTAL - $" + (subTotal + tip + tax);
