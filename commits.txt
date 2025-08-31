@@ -1,0 +1,54 @@
+commit 2fea15afbfd30609271449db0639ac0e3d94d847
+Author: Mickel Ishema Murenzi <murenzimickel1@gmail.com>
+Date:   Sat Aug 23 13:43:15 2025 -0400
+
+    Fix Issue 1:
+    
+    1) Move text generation functionality to view package for better separation of concerns
+
+commit fa88881e4d7694a5e775a60967dbac6bb0ddf491
+Author: Mickel Ishema Murenzi <murenzimickel1@gmail.com>
+Date:   Sat Aug 23 13:33:20 2025 -0400
+
+    Adding the View package
+    
+    1) Added a view package to the project
+    2) Added a BillTextGenerator file to the View package that will have a class to implement the functionality currently provided in the getText method
+
+commit 3dfa33571710fd861467307d0485699baf5d1868
+Author: Mickel Ishema Murenzi <murenzimickel1@gmail.com>
+Date:   Sat Aug 23 13:16:44 2025 -0400
+
+    Fix issue 2
+    
+    Replace magic numbers with named constants
+
+commit 8b6dcefa9bbccb3f5db6ca13bf25564e00af2d1a
+Author: Mickel Ishema Murenzi <murenzimickel1@gmail.com>
+Date:   Thu Aug 21 12:21:36 2025 -0400
+
+    Adding Base Project
+    
+    1) Adding Eclipse project to /code/
+
+commit 1eb12769d0fcb6bd35e66232ec95f39dbba11120
+Author: Mickel Ishema Murenzi <murenzimickel1@gmail.com>
+Date:   Thu Aug 21 10:28:14 2025 -0400
+
+    Adding Base Project
+    
+    1) Adding Eclipse project to /code/
+
+commit f8c787ce1c38a2520ec70e82d76cf63f97d30d25
+Author: Mickel Ishema Murenzi <murenzimickel1@gmail.com>
+Date:   Thu Aug 21 09:59:39 2025 -0400
+
+    Adding Base Project Structure
+    1) Creating the README for the project(/README.md)
+    2)Creating the code directory for the project(/code/)
+
+commit 4585f34c9cf676e6233b451d746e7a1274fc68cf
+Author: Mickel Ishema Murenzi <murenzimickel1@gmail.com>
+Date:   Tue Aug 19 16:04:48 2025 +0200
+
+    Initial commit

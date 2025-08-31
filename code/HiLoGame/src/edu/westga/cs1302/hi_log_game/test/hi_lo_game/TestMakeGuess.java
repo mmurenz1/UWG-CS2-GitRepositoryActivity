@@ -7,6 +7,16 @@ import org.junit.jupiter.api.Test;
 import edu.westga.cs1302.hi_log_game.model.HiLoGame;
 
 class TestMakeGuess {
+	
+	@Test
+	void testFirstGuessIsCorrect() {
+		HiLoGame game = new HiLoGame(3);
+		
+		String result = game.makeGuess(3);
+		
+		assertEquals(result, "Correct.", "checking result text");
+		assertEquals(game.getGuessCount(), 1, "checking guess count");
+	}
 
 	@Test
 	void testGuessIsTooHigh() {
