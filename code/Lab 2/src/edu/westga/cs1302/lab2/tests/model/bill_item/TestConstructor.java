@@ -17,5 +17,42 @@ class TestConstructor {
 		assertEquals(name, item.getName());
 		assertEquals(amount, item.getAmount());
 	}
-
+	
+	@Test
+	void testConstructorWithNullName() {
+		String name = null;
+		double amount = 12.99;
+		
+		IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> new BillItem(name, amount));
+		
+		assertEquals("name must not be null.", exception.getMessage());
+	}
+	
+	@Test
+	void testConstructorWithNegativeAmount() {
+	    String name = "Pizza";
+	    double amount = -5.0;
+	    
+	    IllegalArgumentException exception = assertThrows(
+	        IllegalArgumentException.class,
+	        () -> new BillItem(name, amount)
+	    );
+	    
+	    assertEquals("amount must be positive, but was -5.0", exception.getMessage());
+	}
+	
+	@Test
+	void testConstructorWithZeroAmount() {
+	    // Arrange
+	    String name = "Pizza";
+	    double amount = 0.0;
+	    
+	    // Act & Assert
+	    IllegalArgumentException exception = assertThrows(
+	        IllegalArgumentException.class,
+	        () -> new BillItem(name, amount)
+	    );
+	    
+	    assertEquals("amount must be positive, but was 0.0", exception.getMessage());
+	}
 }
