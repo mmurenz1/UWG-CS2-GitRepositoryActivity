@@ -1,4 +1,4 @@
-package edu.westga.cs1302.lab2.tests.model.bill_item;
+package edu.westga.cs1302.lab2.test.model.bill_item;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -43,11 +43,9 @@ class TestConstructor {
 	
 	@Test
 	void testConstructorWithZeroAmount() {
-	    // Arrange
 	    String name = "Pizza";
 	    double amount = 0.0;
 	    
-	    // Act & Assert
 	    IllegalArgumentException exception = assertThrows(
 	        IllegalArgumentException.class,
 	        () -> new BillItem(name, amount)

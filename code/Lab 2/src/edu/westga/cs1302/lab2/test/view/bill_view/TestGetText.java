@@ -1,4 +1,4 @@
-package edu.westga.cs1302.lab2.tests.view.bill_view;
+package edu.westga.cs1302.lab2.test.view.bill_view;
 
 import static org.junit.jupiter.api.Assertions.*;
 

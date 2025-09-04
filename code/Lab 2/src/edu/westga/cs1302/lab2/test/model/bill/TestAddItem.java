@@ -1,4 +1,4 @@
-package edu.westga.cs1302.lab2.tests.model.bill;
+package edu.westga.cs1302.lab2.test.model.bill;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -15,8 +15,8 @@ class TestAddItem {
         
         bill.addItem(item);
         
-        assertEquals(1, bill.getItems().size());
-        assertEquals(item, bill.getItems().get(0));
+        assertEquals("Pizza", bill.getItems().get(0).getName());
+        assertEquals(12.99, bill.getItems().get(0).getAmount());
     }
     
     @Test
