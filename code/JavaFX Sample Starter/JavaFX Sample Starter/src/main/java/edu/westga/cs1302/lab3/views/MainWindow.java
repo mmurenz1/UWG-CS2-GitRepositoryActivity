@@ -1,10 +1,9 @@
 package edu.westga.cs1302.lab3.views;
+import edu.westga.cs1302.lab3.model.Bill;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-
 
 /**
  * Controller class for drawing various things to our canvas window.
@@ -14,20 +13,18 @@ import javafx.scene.control.TextField;
  */
 public class MainWindow {
 	
-	@FXML
-    private Button actionButton;
+	 @FXML
+	    private TextField amount;
 
-    @FXML
-    private TextArea output;
+	    @FXML
+	    private TextField name;
 
-    @FXML
-    private TextField input;
+	    @FXML
+	    private TextArea output;
 
-    @FXML
-    void displayText(ActionEvent event) {
-    	String input = this.output.getText();
-    	this.output.setText(input);
-
+	    @FXML
+	    void addItem(ActionEvent event) {
+	    
     }
     
     /**
