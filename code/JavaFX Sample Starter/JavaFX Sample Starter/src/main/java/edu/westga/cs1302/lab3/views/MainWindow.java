@@ -15,6 +15,8 @@ import javafx.scene.control.TextField;
  * @version Fall 2025
  */
 public class MainWindow {
+	
+	    private Bill bill;
 		
 	    @FXML
 	    private TextField amount;
@@ -38,6 +40,8 @@ public class MainWindow {
 	        
 	        BillView view = new BillView();
 	        String billText = view.getText(this.bill);
+	        
+	        this.output.setText(billText);
     }
     
     /**
