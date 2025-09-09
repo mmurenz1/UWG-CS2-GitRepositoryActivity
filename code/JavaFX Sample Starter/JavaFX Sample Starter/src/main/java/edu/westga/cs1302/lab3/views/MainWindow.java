@@ -1,5 +1,8 @@
 package edu.westga.cs1302.lab3.views;
 import edu.westga.cs1302.lab3.model.Bill;
+import edu.westga.cs1302.lab3.model.BillItem;
+import edu.westga.cs1302.lab3.views.BillView;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
@@ -12,8 +15,8 @@ import javafx.scene.control.TextField;
  * @version Fall 2025
  */
 public class MainWindow {
-	
-	 @FXML
+		
+	    @FXML
 	    private TextField amount;
 
 	    @FXML
@@ -24,15 +27,18 @@ public class MainWindow {
 
 	    @FXML
 	    void addItem(ActionEvent event) {
-	    
+	    	
+	        String itemName = this.name.getText();
+	        String amountText = this.amount.getText();
+	        double itemAmount = Double.parseDouble(amountText);
+	        
+	        BillItem item = new BillItem(itemName, itemAmount);
     }
     
     /**
      * Perform any needed initialization of UI components and underlying objects.
      */
     public void initialize() {
-    	
+    	this.bill = new Bill();
     }
-    
-    
 }
