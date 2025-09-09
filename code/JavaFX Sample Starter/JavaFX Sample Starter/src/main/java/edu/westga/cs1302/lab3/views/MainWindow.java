@@ -33,12 +33,13 @@ public class MainWindow {
 	        double itemAmount = Double.parseDouble(amountText);
 	        
 	        BillItem item = new BillItem(itemName, itemAmount);
+	        
+	        this.bill.addItem(item);
     }
     
     /**
      * Perform any needed initialization of UI components and underlying objects.
      */
     public void initialize() {
-    	this.bill = new Bill();
     }
 }
