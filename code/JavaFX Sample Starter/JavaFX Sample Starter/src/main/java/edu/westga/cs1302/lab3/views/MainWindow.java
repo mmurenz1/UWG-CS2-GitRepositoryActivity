@@ -35,6 +35,9 @@ public class MainWindow {
 	        BillItem item = new BillItem(itemName, itemAmount);
 	        
 	        this.bill.addItem(item);
+	        
+	        BillView view = new BillView();
+	        String billText = view.getText(this.bill);
     }
     
     /**
