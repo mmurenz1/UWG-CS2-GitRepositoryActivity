@@ -1,8 +1,7 @@
 package edu.westga.cs1302.lab3.views;
+
 import edu.westga.cs1302.lab3.model.Bill;
 import edu.westga.cs1302.lab3.model.BillItem;
-import edu.westga.cs1302.lab3.views.BillView;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
@@ -48,5 +47,6 @@ public class MainWindow {
      * Perform any needed initialization of UI components and underlying objects.
      */
     public void initialize() {
+        this.bill = new Bill();
     }
 }
