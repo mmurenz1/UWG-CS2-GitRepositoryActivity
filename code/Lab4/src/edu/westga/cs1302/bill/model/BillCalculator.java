@@ -7,6 +7,7 @@ package edu.westga.cs1302.bill.model;
  * @version Fall 2025
  */
 public class BillCalculator {
+	
 	/**
      * Calculates the subTotal from an array of BillItems
      * 
