@@ -8,15 +8,15 @@ package edu.westga.cs1302.bill.model;
  */
 public class BillCalculator {
 	
-	/**
-     * Calculates the subTotal from an array of BillItems
-     * 
-     * @precondition items != null && no null values in items array
-     * @postcondition none
-     * 
-     * @param items the array of BillItems to calculate subtotal for
-     * @return the subTotal of all items
-     */
+    /**
+    * Calculates the subTotal from an array of BillItems
+    * 
+    * @precondition items != null && no null values in items array
+    * @postcondition none
+    * 
+    * @param items the array of BillItems to calculate sub total for
+    * @return the subTotal of all items
+    */
     public static double getSubTotal(BillItem[] items) {
         if (items == null) {
             throw new IllegalArgumentException("items array must not be null");
@@ -33,13 +33,13 @@ public class BillCalculator {
     }
 	
     /**
-     * Calculates the tax based on subtotal
+     * Calculates the tax based on sub total
      * 
-     * @precondition subtotal >= 0
+     * @precondition sub total >= 0
      * @postcondition none
      * 
-     * @param subtotal the subtotal to calculate tax on
-     * @return the tax amount (10% of subtotal)
+     * @param subtotal the sub total to calculate tax on
+     * @return the tax amount (10% of sub total)
      */
     public static double getTax(double subtotal) {
         if (subtotal < 0) {
@@ -49,13 +49,13 @@ public class BillCalculator {
     }
 	
     /**
-     * Calculates the tip based on subtotal
+     * Calculates the tip based on sub total
      * 
-     * @precondition subtotal >= 0
+     * @precondition sub total >= 0
      * @postcondition none
      * 
-     * @param subtotal the subtotal to calculate tip on
-     * @return the tip amount (20% of subtotal)
+     * @param subtotal the sub total to calculate tip on
+     * @return the tip amount (20% of sub total)
      */
     public static double getTip(double subtotal) {
         if (subtotal < 0) {
@@ -65,13 +65,13 @@ public class BillCalculator {
     }
 	
     /**
-     * Calculates the total (subtotal + tax + tip)
+     * Calculates the total (sub total + tax + tip)
      * 
-     * @precondition subtotal >= 0
+     * @precondition sub total >= 0
      * @postcondition none
      * 
-     * @param subtotal the subtotal amount
-     * @return the total amount (subtotal + tax + tip)
+     * @param subtotal the sub total amount
+     * @return the total amount (sub total + tax + tip)
      */
     public static double getTotal(double subtotal) {
         if (subtotal < 0) {
