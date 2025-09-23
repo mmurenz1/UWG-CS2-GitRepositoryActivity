@@ -1,30 +1,47 @@
-commit e1b2a36c44265f692b6c793ebbfe17c28439c551
+commit 7fbc578fec564cd78756e441823cc3f1de20771e
+Author: Mickel Ishema Murenzi <murenzimickel1@gmail.com>
+Date:   Sun Sep 14 22:29:01 2025 -0400
+
+    Fix checkstyle indentation and update commit log
+    
+    1) Fixed block comment indentation in BillCalculator class to meet Checkstyle requirements. Updated commits.txt documentation
+
+commit 38a115a05b251dc9c4cc521a37cffc1feaff117c
 Author: Mickel Ishema Murenzi <murenzimickel1@gmail.com>
 Date:   Sun Sep 14 15:04:15 2025 -0400
 
-    Adding unit tests for BillCalculator class:
-    1) Adding tests for getSubtotal, getTax, getTip, and getTotal methods
+    Add unit tests for BillCalculator class
+    
+    1) Created tests for getSubtotal,getTax, getTip, and getTotal methods to
+       verify correct calculations and exception handling
 
-commit 7e89b8089c30b61292dcd52124cb39474e4fd542
+commit 51a4faa69b740c8a1990f9db49a65c6702e719e4
 Author: Mickel Ishema Murenzi <murenzimickel1@gmail.com>
 Date:   Sun Sep 14 14:54:28 2025 -0400
 
-    Adding BillView updates to complete task 2:
-    1) Updating getText method to use BillCalculator static methods instead of manual calculations
+    Update BillView to use BillCalculator methods
+    
+    1) Modified getText method to use BillCalculator static methods instead
+       of manual calculations for subtotal, tax, tip, and total
 
-commit e08c9b278a0003f2dfa01bdf7268fad4a2433ee3
+commit 476fe3486f12d6495de1e50ec0caaf478a733d62
 Author: Mickel Ishema Murenzi <murenzimickel1@gmail.com>
 Date:   Sun Sep 14 14:48:59 2025 -0400
 
-    Adding task 2 implementation:
-    1) Implementing BillCalculator class with static methods for getSubTotal, getTax, getTip, and getTotal with proper precondition checks
+    Add BillCalculator class implementation
+    
+    1) Implemented static methods for calculating subtotal, tax, tip, and
+       total for an array of BillItem objects. Added proper precondition to
+       handle null inputs.
 
-commit 090efdf89e7db0b9e79c7f70884453088a2b640a
+commit ac485d637860cfb38042d81dbe6c72e9a834cde2
 Author: Mickel Ishema Murenzi <murenzimickel1@gmail.com>
 Date:   Sun Sep 14 14:27:42 2025 -0400
 
-    Adding task 1 completion:
-    1) Making BillItems fields final
+    Make BillItem fields final
+    
+    1) Converted name and amount fields to final to ensure immutability and
+       prevent modification after object creation
 
 commit cffe8f55c260aa97b37444262dfb2997a966f128
 Author: Mickel Ishema Murenzi <murenzimickel1@gmail.com>
