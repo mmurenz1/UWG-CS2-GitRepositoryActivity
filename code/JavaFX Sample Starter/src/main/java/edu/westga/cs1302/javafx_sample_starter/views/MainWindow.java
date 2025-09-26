@@ -37,6 +37,10 @@ public class MainWindow {
     
     @FXML
     private Button removeTaskButton;
+    
+    @FXML
+    private Button showTaskCountsButton;
+    
 
     @FXML
     void addButton(ActionEvent event) {

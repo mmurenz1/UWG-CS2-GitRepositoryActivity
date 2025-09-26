@@ -10,23 +10,27 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="628.0" prefWidth="562.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.westga.cs1302.javafx_sample_starter.views.MainWindow">
    <children>
-      <AnchorPane layoutX="-3.0" layoutY="-4.0" prefHeight="641.0" prefWidth="570.0">
+      <AnchorPane layoutX="-4.0" layoutY="-6.0" prefHeight="641.0" prefWidth="570.0">
          <children>
-            <TextField fx:id="taskNameField" layoutX="201.0" layoutY="96.0" />
-            <TextArea fx:id="taskDescriptionArea" layoutX="63.0" layoutY="198.0" prefHeight="115.0" prefWidth="200.0" />
-            <Label layoutX="246.0" layoutY="53.0" text="Task Name" />
-            <Button fx:id="addButton" layoutX="263.0" layoutY="134.0" mnemonicParsing="false" text="+" />
-            <Label layoutX="120.0" layoutY="166.0" text="Task Description" />
-            <Label layoutX="244.0" layoutY="331.0" text="Task Priority" />
-            <ComboBox fx:id="taskPriorityComboBox" layoutX="202.0" layoutY="367.0" prefWidth="150.0" />
-            <Button fx:id="addTaskButton" layoutX="210.0" layoutY="406.0" mnemonicParsing="false" onAction="#addButton" text="Add Task" />
+            <TextField fx:id="taskNameField" layoutX="30.0" layoutY="81.0" />
+            <TextArea fx:id="taskDescriptionArea" layoutX="50.0" layoutY="185.0" prefHeight="115.0" prefWidth="200.0" />
+            <Label layoutX="91.0" layoutY="45.0" text="Task Name" />
+            <Button fx:id="addButton" layoutX="104.0" layoutY="106.0" mnemonicParsing="false" text="+" />
+            <Label layoutX="77.0" layoutY="138.0" text="Task Description" />
+            <Label layoutX="118.0" layoutY="321.0" text="Task Priority" />
+            <ComboBox fx:id="taskPriorityComboBox" layoutX="75.0" layoutY="354.0" prefWidth="150.0" />
+            <Button fx:id="addTaskButton" layoutX="72.0" layoutY="406.0" mnemonicParsing="false" onAction="#addButton" text="Add Task" />
             <ListView fx:id="taskListView" layoutX="288.0" layoutY="198.0" prefHeight="115.0" prefWidth="200.0" />
-            <Label layoutX="95.0" layoutY="453.0" text="Selected Task Description" />
-            <Label layoutX="323.0" layoutY="453.0" text="Selected Task Priority" />
-            <TextField fx:id="selectedTaskPriorityField" editable="false" layoutX="314.0" layoutY="523.0" />
-            <TextArea fx:id="selectedTaskDescriptionArea" layoutX="85.0" layoutY="484.0" prefHeight="103.0" prefWidth="157.0" />
-            <Button fx:id="updateDescriptionButton" layoutX="104.0" layoutY="595.0" mnemonicParsing="false" onAction="#updateDescriptionButton" text="Update Description" />
-            <Button fx:id="removeTaskButton" layoutX="288.0" layoutY="406.0" mnemonicParsing="false" onAction="#removeTaskButton" text="Remove Task" />
+            <Label layoutX="69.0" layoutY="453.0" text="Selected Task Description" />
+            <Label layoutX="265.0" layoutY="558.0" text="Selected Task Priority" />
+            <TextField fx:id="selectedTaskPriorityField" editable="false" layoutX="247.0" layoutY="594.0" />
+            <TextArea fx:id="selectedTaskDescriptionArea" layoutX="62.0" layoutY="478.0" prefHeight="103.0" prefWidth="157.0" />
+            <Button fx:id="updateDescriptionButton" layoutX="91.0" layoutY="594.0" mnemonicParsing="false" onAction="#updateDescriptionButton" text="Update Description" />
+            <Button fx:id="removeTaskButton" layoutX="140.0" layoutY="406.0" mnemonicParsing="false" onAction="#removeTaskButton" text="Remove Task" />
+            <Label fx:id="mediumPriorityLabel" layoutX="372.0" layoutY="431.0" text="Medium Priority Tasks: 0" />
+            <Label fx:id="highPriorityLabel" layoutX="277.0" layoutY="410.0" text="High Priority Tasks: 0" />
+            <Label fx:id="lowPriorityLabel" layoutX="449.0" layoutY="410.0" text="Low Priority Tasks: 0" />
+            <Button fx:id="showTaskCountsButton" layoutX="370.0" layoutY="367.0" mnemonicParsing="false" text="Show Task Counts" />
          </children>
       </AnchorPane>
    </children>
