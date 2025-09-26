@@ -34,6 +34,9 @@ public class MainWindow {
     
     @FXML
     private Button updateDescriptionButton;
+    
+    @FXML
+    private Button removeTaskButton;
 
     @FXML
     void addButton(ActionEvent event) {
@@ -62,6 +65,10 @@ public class MainWindow {
             String newDescription = this.selectedTaskDescriptionArea.getText();
             selectedTask.setDescription(newDescription);
         }
+    }
+    
+    @FXML
+    void removeTaskButton(ActionEvent event) {
     }
 
     /**
