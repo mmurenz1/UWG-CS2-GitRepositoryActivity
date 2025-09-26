@@ -13,14 +13,18 @@
       <AnchorPane layoutX="-3.0" layoutY="-4.0" prefHeight="641.0" prefWidth="570.0">
          <children>
             <TextField fx:id="taskNameField" layoutX="201.0" layoutY="96.0" />
-            <TextArea fx:id="taskDescriptionArea" layoutX="63.0" layoutY="198.0" prefHeight="200.0" prefWidth="200.0" />
+            <TextArea fx:id="taskDescriptionArea" layoutX="63.0" layoutY="198.0" prefHeight="115.0" prefWidth="200.0" />
             <Label layoutX="246.0" layoutY="53.0" text="Task Name" />
             <Button fx:id="addButton" layoutX="263.0" layoutY="134.0" mnemonicParsing="false" text="+" />
-            <Label layoutX="232.0" layoutY="168.0" text="Task Description" />
-            <Label layoutX="244.0" layoutY="415.0" text="Task Priority" />
-            <ComboBox fx:id="taskPriorityComboBox" layoutX="201.0" layoutY="455.0" prefWidth="150.0" />
-            <Button fx:id="addTaskButton" layoutX="244.0" layoutY="510.0" mnemonicParsing="false" onAction="#addButton" text="Add Task" />
-            <ListView fx:id="taskListView" layoutX="288.0" layoutY="198.0" prefHeight="200.0" prefWidth="200.0" />
+            <Label layoutX="120.0" layoutY="166.0" text="Task Description" />
+            <Label layoutX="244.0" layoutY="331.0" text="Task Priority" />
+            <ComboBox fx:id="taskPriorityComboBox" layoutX="202.0" layoutY="367.0" prefWidth="150.0" />
+            <Button fx:id="addTaskButton" layoutX="243.0" layoutY="406.0" mnemonicParsing="false" onAction="#addButton" text="Add Task" />
+            <ListView fx:id="taskListView" layoutX="288.0" layoutY="198.0" prefHeight="115.0" prefWidth="200.0" />
+            <Label layoutX="97.0" layoutY="453.0" text="Selected Task Description" />
+            <Label layoutX="323.0" layoutY="453.0" text="Selected Task Priority" />
+            <TextField fx:id="selectedTaskPriorityField" editable="false" layoutX="314.0" layoutY="523.0" />
+            <TextArea fx:id="selectedTaskDescriptionArea" editable="false" layoutX="85.0" layoutY="484.0" prefHeight="103.0" prefWidth="157.0" />
          </children>
       </AnchorPane>
    </children>

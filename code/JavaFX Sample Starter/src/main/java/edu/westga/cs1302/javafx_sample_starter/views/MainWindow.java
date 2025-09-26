@@ -25,6 +25,12 @@ public class MainWindow {
 
     @FXML
     private Button addTaskButton;
+    
+    @FXML
+    private TextArea selectedTaskDescriptionArea;
+    
+    @FXML
+    private TextField selectedTaskPriorityField;
 
     @FXML
     void addButton(ActionEvent event) {
@@ -42,6 +48,7 @@ public class MainWindow {
             this.taskPriorityComboBox.getSelectionModel().clearSelection();
             
         } catch (IllegalArgumentException e) {
+            
         }
     }
 
@@ -52,3 +59,4 @@ public class MainWindow {
         this.taskPriorityComboBox.getItems().addAll("High", "Medium", "Low");
     }
 }
+   
