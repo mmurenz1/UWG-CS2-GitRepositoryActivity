@@ -69,6 +69,10 @@ public class MainWindow {
     
     @FXML
     void removeTaskButton(ActionEvent event) {
+    	Task selectedTask = this.taskListView.getSelectionModel().getSelectedItem();
+    	if (selectedTask != null) {
+            this.taskListView.getItems().remove(selectedTask);
+    	}
     }
 
     /**
