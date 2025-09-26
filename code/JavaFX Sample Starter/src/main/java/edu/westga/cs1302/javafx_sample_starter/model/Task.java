@@ -72,6 +72,18 @@ public class Task {
     }
     
     /**
+     * Sets the description of the task.
+     * 
+     * @param description the new description (cannot be null)
+     */
+    public void setDescription(String description) {
+        if (description == null) {
+            throw new IllegalArgumentException("Task description cannot be null");
+        }
+        this.description = description;
+    }
+    
+    /**
      * Returns the name of the task.
      * 
      * @return the task name
