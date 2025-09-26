@@ -31,6 +31,9 @@ public class MainWindow {
     
     @FXML
     private TextField selectedTaskPriorityField;
+    
+    @FXML
+    private Button updateDescriptionButton;
 
     @FXML
     void addButton(ActionEvent event) {
@@ -51,12 +54,31 @@ public class MainWindow {
             
         }
     }
+    
+    @FXML
+    void updateDescriptionButton(ActionEvent event) {
+        Task selectedTask = this.taskListView.getSelectionModel().getSelectedItem();
+        if (selectedTask != null) {
+            String newDescription = this.selectedTaskDescriptionArea.getText();
+            selectedTask.setDescription(newDescription);
+        }
+    }
 
     /**
      * Perform any needed initialization of UI components and underlying objects.
      */
     public void initialize() {
         this.taskPriorityComboBox.getItems().addAll("High", "Medium", "Low");
+        
+        this.taskListView.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue != null) {
+                this.selectedTaskDescriptionArea.setText(newValue.getDescription());
+                this.selectedTaskPriorityField.setText(newValue.getPriority());
+            } else {
+                this.selectedTaskDescriptionArea.clear();
+                this.selectedTaskPriorityField.clear();
+            }
+        });
     }
 }
    
