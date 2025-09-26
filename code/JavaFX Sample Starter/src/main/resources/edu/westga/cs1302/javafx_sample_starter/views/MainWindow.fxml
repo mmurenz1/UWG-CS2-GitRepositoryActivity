@@ -24,7 +24,8 @@
             <Label layoutX="97.0" layoutY="453.0" text="Selected Task Description" />
             <Label layoutX="323.0" layoutY="453.0" text="Selected Task Priority" />
             <TextField fx:id="selectedTaskPriorityField" editable="false" layoutX="314.0" layoutY="523.0" />
-            <TextArea fx:id="selectedTaskDescriptionArea" editable="false" layoutX="85.0" layoutY="484.0" prefHeight="103.0" prefWidth="157.0" />
+            <TextArea fx:id="selectedTaskDescriptionArea" layoutX="85.0" layoutY="484.0" prefHeight="103.0" prefWidth="157.0" />
+            <Button fx:id="updateDescriptionButton" layoutX="104.0" layoutY="595.0" mnemonicParsing="false" text="Update Description" />
          </children>
       </AnchorPane>
    </children>

@@ -4,7 +4,7 @@ package edu.westga.cs1302.javafx_sample_starter.model;
  * Represents a task with a name, description, and priority.
  * The name and priority are immutable after creation.
  * 
- * @author [Your Name]
+ * @author MickelMurenzi
  * @version Fall 2025
  */
 public class Task {
