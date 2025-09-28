@@ -3,11 +3,13 @@ package edu.westga.cs1302.javafx_sample_starter.views;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.Button;
 import edu.westga.cs1302.javafx_sample_starter.model.Task;
+import edu.westga.cs1302.javafx_sample_starter.model.TaskUtility;
 
 public class MainWindow {
 
@@ -40,6 +42,15 @@ public class MainWindow {
     
     @FXML
     private Button showTaskCountsButton;
+    
+    @FXML
+    private Label highPriorityLabel;
+
+    @FXML
+    private Label lowPriorityLabel;
+
+    @FXML
+    private Label mediumPriorityLabel;
     
 
     @FXML
@@ -77,6 +88,18 @@ public class MainWindow {
     	if (selectedTask != null) {
             this.taskListView.getItems().remove(selectedTask);
     	}
+    }
+    
+    @FXML
+    void showTaskCountsButton(ActionEvent event) {
+    	
+    	int highCount = TaskUtility.countTasksByPriority("High", this.taskListView.getItems());
+    	int mediumCount = TaskUtility.countTasksByPriority("Medium", this.taskListView.getItems());
+    	int lowCount = TaskUtility.countTasksByPriority("Low", this.taskListView.getItems());
+    	
+    	this.highPriorityLabel.setText("High Priority Tasks: " + highCount);
+        this.mediumPriorityLabel.setText("Medium Priority Tasks: " + mediumCount);
+        this.lowPriorityLabel.setText("Low Priority Tasks: " + lowCount);
     }
 
     /**

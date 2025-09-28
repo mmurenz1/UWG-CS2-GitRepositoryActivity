@@ -1,3 +1,120 @@
+commit fc75f312acdc12da9ddc53619bcbc217facd71ee
+Author: Mickel Ishema Murenzi <murenzimickel1@gmail.com>
+Date:   Fri Sep 26 13:37:43 2025 -0400
+
+    Task 5B - Business Logic for Counting Number of Tasks For Each Priority
+    
+    1) Created TaskUtility class in model package
+    2) Added static countTasksByPriority method
+    3) Method accepts priority string and task list, returns count
+
+commit ac453e864478647011a57f1c1bc5db96a4ecc5cc
+Author: Mickel Ishema Murenzi <murenzimickel1@gmail.com>
+Date:   Fri Sep 26 13:17:52 2025 -0400
+
+    Task 5A - Implementing UI
+    
+    1) Added three labels for priority counts (High, medium, low)
+    2) Added Show Task Counts Buttom
+    3) Set fx:ids for all counting components
+
+commit 64292f1c7ed57e5edbfa7d98f772c936bb927318
+Author: Mickel Ishema Murenzi <murenzimickel1@gmail.com>
+Date:   Fri Sep 26 12:41:07 2025 -0400
+
+    Task 4B - Implement UI for Removing Task from the List
+    
+    1) Implemented removeTaskButton method to remove selected task from ListView
+    2) Method removes currently selected task when button is clicked
+
+commit 37038165b312eeff521f77012b4eb1b97e7dec76
+Author: Mickel Ishema Murenzi <murenzimickel1@gmail.com>
+Date:   Fri Sep 26 12:31:36 2025 -0400
+
+    Task 4A - UI for Removing Task
+    
+    1) Added Remove Task button in Scene Builder
+    2) Set fx:id to removeTaskButton
+    3) Connected button action to removeTaskButton method
+
+commit c268d4a148f9a75e4bfe68a597d12d6fd123a92f
+Author: Mickel Ishema Murenzi <murenzimickel1@gmail.com>
+Date:   Fri Sep 26 12:21:28 2025 -0400
+
+    Task 3C - Connect Business Logic and UI for Updating Description of Task in the List
+    
+    1) Added updateDescriptionButton field and method for MainWindow
+    2) Implemented update functionality to modify selected task desription
+    3) Connected Update Description button action in FXML
+
+commit 73f3b3622baa67108a70082b9fb40ec84d6dc935
+Author: Mickel Ishema Murenzi <murenzimickel1@gmail.com>
+Date:   Fri Sep 26 11:22:35 2025 -0400
+
+    Task 3B - Business Logic for Updating Description
+    
+    1) Added setDescription method to Task class
+    2) Included null validation for description parameter
+
+commit 9b1303755bc692c8e211c7c9b4b06d1619770529
+Author: Mickel Ishema Murenzi <murenzimickel1@gmail.com>
+Date:   Fri Sep 26 11:19:50 2025 -0400
+
+    Task 3A - Implementing UI
+    
+    1) Made description TextArea editable
+    2) Added Update Description button with fx:id updateDescriptionButton
+
+commit edef98195ed9ef4f8f17f5732350b786e62a6696
+Author: Mickel Ishema Murenzi <murenzimickel1@gmail.com>
+Date:   Fri Sep 26 11:02:25 2025 -0400
+
+    Displaying Selected task
+    
+    1) Added UI components for displaying selected task details
+    2) Added read-only TextArea for task description display
+    3) Added read-only TextField for task priority display
+    4) Implemented selection listener to show task details when clicked
+
+commit 26bf04f127e057609808fc69a2a96b4bfefe8cde
+Author: Mickel Ishema Murenzi <murenzimickel1@gmail.com>
+Date:   Tue Sep 23 14:36:54 2025 -0400
+
+    Connect UI to business logic for adding task
+    
+    1) Added task import to mainwindow class
+    2) Initialized ComboBox with priority options (High, Medium, Low)
+    3) Implemented addButton method to create Task objects from UI input
+    4) Added tasks to ListView and clear input fields after adding
+    5) Added basic error handling for invalid input
+
+commit 330ab1aac15eb2dc72cecddf687c5c1b222c66c8
+Author: Mickel Ishema Murenzi <murenzimickel1@gmail.com>
+Date:   Tue Sep 23 14:26:57 2025 -0400
+
+    Business logic for storing a task:
+    
+    1) Created Task Class in model package
+    2) Added cnstructor, getters, and toString method
+    3) Made name and priority imutable (final fields)
+    4) Added input validation and error handling
+    5) Created unit tests for all functionality
+
+commit c0e0a5fee761ded217c1c14eb82bc60cdd3cb382
+Author: Mickel Ishema Murenzi <murenzimickel1@gmail.com>
+Date:   Tue Sep 23 11:35:03 2025 -0400
+
+    Task 1A - UI for adding tasks
+    
+    1)Updated MainWindow.fxml with required UI components
+    2) Added task name label and text field
+    3) Added task description label and text area
+    4) Added task priority label and combo box
+    5) Added add task button with action method
+    6) Added listview for displaying tasks
+    7) Updated mainwindow.java with @FXML fields
+    8) Set controller class in FXML to mainwindow
+
 commit 7fbc578fec564cd78756e441823cc3f1de20771e
 Author: Mickel Ishema Murenzi <murenzimickel1@gmail.com>
 Date:   Sun Sep 14 22:29:01 2025 -0400

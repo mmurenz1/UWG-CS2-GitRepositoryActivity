@@ -64,4 +64,29 @@ public class TaskTest {
     public void testConstructorNullPriority() {
         new Task("Valid name", "Valid description", null);
     }
+    
+    @Test
+    public void testSetDescription() {
+        Task task = new Task("Task Name", "Original description", "High");
+        task.setDescription("Updated description");
+        assertEquals("Updated description", task.getDescription());
+    }
+
+    @Test
+    public void testSetDescriptionEmpty() {
+        Task task = new Task("Task Name", "Description", "High");
+        task.setDescription("");
+        assertEquals("", task.getDescription());
+    }
+
+    @Test
+    public void testSetDescriptionNull() {
+        Task task = new Task("Task Name", "Description", "High");
+        try {
+            task.setDescription(null);
+            fail("Expected IllegalArgumentException");
+        } catch (IllegalArgumentException e) {
+            assertEquals("Task description cannot be null", e.getMessage());
+        }
+    }
 }
