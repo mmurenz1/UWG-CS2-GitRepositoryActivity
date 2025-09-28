@@ -1,3 +1,15 @@
+commit fd1420b2d13b834c7d277aa37b6229fd6361b86b
+Author: Mickel Ishema Murenzi <murenzimickel1@gmail.com>
+Date:   Sat Sep 27 22:37:58 2025 -0400
+
+    Task 5C - Connect Business Logic and UI for counting number of tasks for each priority
+    
+    1) Added @FXML for priority count labels and show counts button
+    2) Imported TaskUtility class in Main Window
+    3) Implemented showTaskCountsButton method using TaskUtility.countTasksByPriority
+    4) Method updates all three priority labels with current task counts
+    5) Connected button action in FXML
+
 commit fc75f312acdc12da9ddc53619bcbc217facd71ee
 Author: Mickel Ishema Murenzi <murenzimickel1@gmail.com>
 Date:   Fri Sep 26 13:37:43 2025 -0400

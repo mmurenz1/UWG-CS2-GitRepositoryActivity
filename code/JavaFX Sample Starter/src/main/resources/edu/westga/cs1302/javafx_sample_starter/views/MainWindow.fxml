@@ -10,26 +10,17 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="628.0" prefWidth="562.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.westga.cs1302.javafx_sample_starter.views.MainWindow">
    <children>
-      <AnchorPane layoutX="-35.0" layoutY="-6.0" prefHeight="641.0" prefWidth="633.0">
+      <AnchorPane layoutX="-3.0" layoutY="-4.0" prefHeight="641.0" prefWidth="570.0">
          <children>
-            <TextField fx:id="taskNameField" layoutX="51.0" layoutY="74.0" prefHeight="25.0" prefWidth="284.0" />
-            <TextArea fx:id="taskDescriptionArea" layoutX="51.0" layoutY="146.0" prefHeight="115.0" prefWidth="284.0" />
-            <Label layoutX="51.0" layoutY="44.0" text="Task Name" />
-            <Label layoutX="51.0" layoutY="118.0" text="Task Description" />
-            <Label layoutX="385.0" layoutY="150.0" text="Task Priority" />
-            <ComboBox fx:id="taskPriorityComboBox" layoutX="473.0" layoutY="146.0" prefHeight="25.0" prefWidth="107.0" />
-            <Button fx:id="addTaskButton" layoutX="378.0" layoutY="182.0" mnemonicParsing="false" onAction="#addButton" prefHeight="79.0" prefWidth="80.0" text="Add Task" />
-            <ListView fx:id="taskListView" layoutX="54.0" layoutY="281.0" prefHeight="205.0" prefWidth="284.0" />
-            <Label layoutX="405.0" layoutY="281.0" text="Selected Task Description" />
-            <Label layoutX="417.0" layoutY="434.0" text="Selected Task Priority" />
-            <TextField fx:id="selectedTaskPriorityField" editable="false" layoutX="375.0" layoutY="461.0" prefHeight="25.0" prefWidth="201.0" />
-            <TextArea fx:id="selectedTaskDescriptionArea" layoutX="378.0" layoutY="305.0" prefHeight="79.0" prefWidth="201.0" />
-            <Button fx:id="updateDescriptionButton" layoutX="375.0" layoutY="396.0" mnemonicParsing="false" onAction="#updateDescriptionButton" prefHeight="25.0" prefWidth="201.0" text="Update Description" />
-            <Button fx:id="removeTaskButton" layoutX="473.0" layoutY="182.0" mnemonicParsing="false" onAction="#removeTaskButton" prefHeight="79.0" prefWidth="107.0" text="Remove Task" />
-            <Label fx:id="mediumPriorityLabel" layoutX="265.0" layoutY="571.0" text="Medium Priority Tasks: 0" />
-            <Label fx:id="highPriorityLabel" layoutX="102.0" layoutY="571.0" text="High Priority Tasks: 0" />
-            <Label fx:id="lowPriorityLabel" layoutX="450.0" layoutY="571.0" text="Low Priority Tasks: 0" />
-            <Button fx:id="showTaskCountsButton" layoutX="270.0" layoutY="518.0" mnemonicParsing="false" onAction="#showTaskCountsButton" prefHeight="25.0" prefWidth="136.0" text="Show Task Counts" />
+            <TextField fx:id="taskNameField" layoutX="201.0" layoutY="96.0" />
+            <TextArea fx:id="taskDescriptionArea" layoutX="63.0" layoutY="198.0" prefHeight="200.0" prefWidth="200.0" />
+            <Label layoutX="246.0" layoutY="53.0" text="Task Name" />
+            <Button fx:id="addButton" layoutX="263.0" layoutY="134.0" mnemonicParsing="false" text="+" />
+            <Label layoutX="232.0" layoutY="168.0" text="Task Description" />
+            <Label layoutX="244.0" layoutY="415.0" text="Task Priority" />
+            <ComboBox fx:id="taskPriorityComboBox" layoutX="201.0" layoutY="455.0" prefWidth="150.0" />
+            <Button fx:id="addTaskButton" layoutX="244.0" layoutY="510.0" mnemonicParsing="false" onAction="#addButton" text="Add Task" />
+            <ListView fx:id="taskListView" layoutX="288.0" layoutY="198.0" prefHeight="200.0" prefWidth="200.0" />
          </children>
       </AnchorPane>
    </children>
