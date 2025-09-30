@@ -53,11 +53,13 @@ public class StudentDataPersistenceManager {
 		
 		try (Scanner reader = new Scanner(inputFile)) {
 			while (reader.hasNextLine()) {
-				String name = reader.nextLine();
-				if (!reader.hasNextLine()) {
-					throw new IOException("missing grade for " + name);
+				String line = reader.nextLine();
+				String[] parts = line.split(",");
+				if (parts.length != 2) {
+				    throw new IOException("invalid format for line: " + line);
 				}
-				int grade = Integer.parseInt(reader.nextLine());
+				String name = parts[0];
+				int grade = Integer.parseInt(parts[1]);
 				students.add(new Student(name, grade));
 			}
 		} catch (NumberFormatException error) {
