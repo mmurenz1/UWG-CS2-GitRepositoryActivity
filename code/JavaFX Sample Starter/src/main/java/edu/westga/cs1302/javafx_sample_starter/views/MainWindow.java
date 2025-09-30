@@ -11,6 +11,12 @@ import javafx.scene.control.Button;
 import edu.westga.cs1302.javafx_sample_starter.model.Task;
 import edu.westga.cs1302.javafx_sample_starter.model.TaskUtility;
 
+/**
+ * Main Window class for the project.
+ * 
+ * @author MickelMurenzi
+ * @version Fall 2025
+ */
 public class MainWindow {
 
     @FXML
@@ -52,7 +58,6 @@ public class MainWindow {
     @FXML
     private Label mediumPriorityLabel;
     
-
     @FXML
     void addButton(ActionEvent event) {
         try {
@@ -68,7 +73,7 @@ public class MainWindow {
             this.taskDescriptionArea.clear();
             this.taskPriorityComboBox.getSelectionModel().clearSelection();
             
-        } catch (IllegalArgumentException e) {
+        } catch (IllegalArgumentException exception) {
             
         }
     }

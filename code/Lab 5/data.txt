@@ -1,4 +1,3 @@
-aaa
-1
-ddd
-3
+mickel,80
+ishema,90
+murenzi,100
