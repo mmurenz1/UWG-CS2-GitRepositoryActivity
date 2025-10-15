@@ -2,12 +2,18 @@ package edu.westga.cs1302.task_tracker.model;
 
 import java.util.Comparator;
 
+/**
+ * Comparator for sorting Tasks in descending priority order (HIGH, MEDIUM, LOW).
+ * 
+ * @author CS 1302
+ * @version Fall 2025
+ */
 public class Descending implements Comparator<Task> {
 
     @Override
     public int compare(Task task1, Task task2) {
-        int priority1 = getPriorityValue(task1.getPriority());
-        int priority2 = getPriorityValue(task2.getPriority());
+        int priority1 = this.getPriorityValue(task1.getPriority());
+        int priority2 = this.getPriorityValue(task2.getPriority());
         
         return Integer.compare(priority1, priority2);
     }
