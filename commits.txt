@@ -1,3 +1,42 @@
+commit ecb7bfa7adb18e8238869613add40def275cf053
+Author: Mickel Ishema Murenzi <murenzimickel1@gmail.com>
+Date:   Wed Oct 15 14:22:39 2025 -0400
+
+    Fix checkstyle warnings in comparator classes
+    
+    1) Added Javadoc comments to ascending and descending classes
+    2) Added 'this.' prefix to method calls as required by checkstlye
+
+commit f464eeb1dc74fa42be675dca5a4f1688202715d6
+Author: Mickel Ishema Murenzi <murenzimickel1@gmail.com>
+Date:   Wed Oct 15 13:51:09 2025 -0400
+
+    Added sorting functionality to MainWindow
+    
+    1) Added ascending and descending comparators to order ComboBox
+    2) Implemented sortTasks method to sort task list by selected comparator
+    3) Initialized ComboBox with default selection in initialize method
+
+commit be2dc225036f918b5aafe546b74ab3f329888674
+Author: Mickel Ishema Murenzi <murenzimickel1@gmail.com>
+Date:   Mon Oct 13 21:53:20 2025 -0400
+
+    Implement Descending comparator for Task priority
+    
+    1) Added compare method to sort tasks by descending priority (HIGH, MEDIUM, LOW)
+    2) Created helper method to assign numeric values to priorities
+    3) Added unit tests to verify correct sorting behavior
+
+commit 61b1cb9eaaa9e0016ebbb94e95fe8b84d4165e78
+Author: Mickel Ishema Murenzi <murenzimickel1@gmail.com>
+Date:   Mon Oct 13 21:47:08 2025 -0400
+
+    Implementing Ascending comparator for Task Priority
+    
+    1) Added compare method to sort tasks by ascending priority (LOW, MEDIUM, HIGH)
+    2) Created helper method to assign numeric values to priorities
+    3) Added unit tests to verify correct sorting behavior
+
 commit 286622f90fc906ac31a3ed306c4450711839bd35
 Author: Mickel Ishema Murenzi <murenzimickel1@gmail.com>
 Date:   Wed Oct 1 22:21:10 2025 -0400
