@@ -69,13 +69,14 @@ public class MainWindow {
      * @param event we will not use this parameter, only here due to JavaFX Library requirement
      */
     @FXML
-    void selectTask(MouseEvent event) {
-    	Task selectedTask = this.tasks.getSelectionModel().getSelectedItem();
-    	if (selectedTask != null) {
-    		this.selectedPriority.setText(selectedTask.getPriority().toString());
-    		this.selectedDescription.setText(selectedTask.getDescription());
-    	}
-    }
+	void selectTask(MouseEvent event) {
+		Task selectedTask = this.tasks.getSelectionModel().getSelectedItem();
+		if (selectedTask != null) {
+			this.selectedPriority.setText(selectedTask.getPriority().toString());
+			this.selectedDescription.setText(selectedTask.getDescription());
+			this.subTasks.getItems().setAll(selectedTask.getSubTasks());
+		}
+	}
 
     /** Remove the currently selected task.
      * 
@@ -155,9 +156,39 @@ public class MainWindow {
     
     @FXML
 	void addSubTask(ActionEvent event) {
+		try {
+			Task selectedTask = this.tasks.getSelectionModel().getSelectedItem();
+			if (selectedTask == null) {
+				Alert alert = new Alert(AlertType.ERROR);
+				alert.setContentText("No task selected. Please select a task to add a subtask to.");
+				alert.showAndWait();
+				return;
+			}
+			
+			Task newSubTask = new Task(this.name.getText(), this.description.getText(), this.priority.getValue());
+			Task updatedTask = selectedTask.addTask(newSubTask);
+			
+			int index = this.tasks.getItems().indexOf(selectedTask);
+			this.tasks.getItems().set(index, updatedTask);
+			this.tasks.getSelectionModel().select(updatedTask);
+			
+			this.subTasks.getItems().setAll(updatedTask.getSubTasks());
+		} catch (IllegalArgumentException error) {
+			Alert alert = new Alert(AlertType.ERROR);
+			alert.setContentText(error.getMessage());
+			alert.showAndWait();
+		}
 	}
 	
-	@FXML
+    @FXML
 	void selectSubTask(MouseEvent event) {
+		Task selectedSubTask = this.subTasks.getSelectionModel().getSelectedItem();
+		if (selectedSubTask != null) {
+			Alert alert = new Alert(AlertType.INFORMATION);
+			alert.setTitle("SubTask Details");
+			alert.setHeaderText(selectedSubTask.getName());
+			alert.setContentText("Priority: " + selectedSubTask.getPriority() + "\n\nDescription: " + selectedSubTask.getDescription());
+			alert.showAndWait();
+		}
 	}
 }
