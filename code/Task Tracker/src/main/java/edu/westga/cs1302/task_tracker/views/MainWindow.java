@@ -186,8 +186,10 @@ public class MainWindow {
 		if (selectedSubTask != null) {
 			Alert alert = new Alert(AlertType.INFORMATION);
 			alert.setTitle("SubTask Details");
-			alert.setHeaderText(selectedSubTask.getName());
-			alert.setContentText("Priority: " + selectedSubTask.getPriority() + "\n\nDescription: " + selectedSubTask.getDescription());
+			alert.setHeaderText("Task: " + selectedSubTask.getName());
+			alert.setContentText("Priority: " + selectedSubTask.getPriority().toString() + 
+			                     "\n\nDescription:\n" + selectedSubTask.getDescription());
+			alert.setResizable(true);
 			alert.showAndWait();
 		}
 	}
