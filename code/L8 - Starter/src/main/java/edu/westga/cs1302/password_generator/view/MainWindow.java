@@ -33,6 +33,17 @@ public class MainWindow {
     	this.vm.getRequireUppercase().bind(this.mustIncludeUpperCaseLetters.selectedProperty());
     	this.minimumLength.setText(this.vm.getMinimumLength().getValue());
     	this.vm.getMinimumLength().bind(this.minimumLength.textProperty());
+    	this.minimumLength.textProperty().addListener((observable, oldValue, newValue) -> {
+    	    if (!newValue.matches("^[1-9][0-9]*$")) {
+    	        if (newValue.isEmpty()) {
+    	            this.vm.getErrorText().setValue("");
+    	        } else {
+    	            this.vm.getErrorText().setValue("Minimum length must be a positive integer");
+    	        }
+    	    } else {
+    	        this.vm.getErrorText().setValue("");
+    	    }
+    	});
     	
     	this.output.setItems(this.vm.getPasswordList());
     	this.errorTextLabel.textProperty().bind(this.vm.getErrorText());
