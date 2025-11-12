@@ -40,5 +40,28 @@ class TestGeneratePassword {
 		assertTrue(vm.getPassword().getValue().length() >= 2, "checking the password property has an appropriate number of characters");
 		assertEquals("", vm.getErrorText().getValue(), "checking the error text property");
 	}
+	
+	@Test
+	void testPasswordAddedToList() {
+	    ViewModel vm = new ViewModel();
+	    vm.getMinimumLength().setValue("5");
+	    
+	    vm.generatePassword();
+	    
+	    assertEquals(1, vm.getPasswordList().size(), "checking one password is in the list");
+	    assertFalse(vm.getPasswordList().get(0).isEmpty(), "checking the password is not empty");
+	}
+
+	@Test
+	void testMultiplePasswordsAddedToList() {
+	    ViewModel vm = new ViewModel();
+	    vm.getMinimumLength().setValue("3");
+	    
+	    vm.generatePassword();
+	    vm.generatePassword();
+	    vm.generatePassword();
+	    
+	    assertEquals(3, vm.getPasswordList().size(), "checking three passwords are in the list");
+	}
 
 }
