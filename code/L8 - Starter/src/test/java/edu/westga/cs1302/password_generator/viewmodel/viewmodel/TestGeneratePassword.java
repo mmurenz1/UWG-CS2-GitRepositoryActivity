@@ -63,5 +63,24 @@ class TestGeneratePassword {
 	    
 	    assertEquals(3, vm.getPasswordList().size(), "checking three passwords are in the list");
 	}
+	
+	@Test
+	void testGetPasswordListNotNull() {
+	    ViewModel vm = new ViewModel();
+	    
+	    assertNotNull(vm.getPasswordList(), "checking password list is not null");
+	    assertEquals(0, vm.getPasswordList().size(), "checking password list starts empty");
+	}
+	
+	@Test
+	void testPasswordNotAddedToListWhenError() {
+	    ViewModel vm = new ViewModel();
+	    vm.getMinimumLength().setValue("abc");
+	    
+	    int initialSize = vm.getPasswordList().size();
+	    vm.generatePassword();
+	    
+	    assertEquals(initialSize, vm.getPasswordList().size(), "checking no password added when error occurs");
+	}
 
 }
