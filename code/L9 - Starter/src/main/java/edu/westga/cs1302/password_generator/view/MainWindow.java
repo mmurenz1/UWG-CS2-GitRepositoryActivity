@@ -3,19 +3,16 @@ package edu.westga.cs1302.password_generator.view;
 import edu.westga.cs1302.password_generator.viewmodel.ViewModel;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
-import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.MenuItem;
 import javafx.stage.FileChooser;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import javafx.scene.control.Alert;
 
 /** Codebehind for the MainWindow of the Application.
  * 
@@ -92,12 +89,12 @@ public class MainWindow {
     }
     
     private boolean isInputValid() {
-        boolean hasValidLength = this.minimumLength.getText().matches("\\d+") && 
-                                 Integer.parseInt(this.minimumLength.getText()) > 0;
+    	boolean hasValidLength = this.minimumLength.getText().matches("\\d+")
+                && Integer.parseInt(this.minimumLength.getText()) > 0;
         
-        boolean hasAtLeastOneCheckbox = this.vm.getRequireDigits().getValue() || 
-                                         this.vm.getRequireLowercase().getValue() || 
-                                         this.vm.getRequireUppercase().getValue();
+                boolean hasAtLeastOneCheckbox = this.vm.getRequireDigits().getValue()
+                        || this.vm.getRequireLowercase().getValue()
+                        || this.vm.getRequireUppercase().getValue();
         
         return hasValidLength && hasAtLeastOneCheckbox;
     }
@@ -118,11 +115,11 @@ public class MainWindow {
                 for (String password : this.vm.getPasswordHistory()) {
                     writer.write(password + "\n");
                 }
-            } catch (IOException e) {
+            } catch (IOException ioException) {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Error");
                 alert.setHeaderText("Failed to save file");
-                alert.setContentText(e.getMessage());
+                alert.setContentText(ioException.getMessage());
                 alert.showAndWait();
             }
         }
