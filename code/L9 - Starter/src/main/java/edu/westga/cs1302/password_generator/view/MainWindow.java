@@ -50,9 +50,27 @@ public class MainWindow {
     	this.errorTextLabel.textProperty().bind(this.vm.getErrorText());
     	this.passwordHistory.setItems(this.vm.getPasswordHistory());
     	
-    	this.minimumLength.textProperty().addListener((observable, newValue, oldValue) -> {
-    		this.minLengthErrorText.setVisible(!newValue.matches("\\d+") || Integer.parseInt(newValue) == 0);
+    	this.minimumLength.textProperty().addListener((observable, oldValue, newValue) -> {
+    	    if (newValue.isEmpty()) {
+    	        this.minLengthErrorText.setVisible(false);
+    	    } else {
+    	        this.minLengthErrorText.setVisible(!newValue.matches("\\d+") || Integer.parseInt(newValue) == 0);
+    	    }
     	});
+    	
+    	this.mustIncludeDigits.selectedProperty().addListener((observable, oldValue, newValue) -> {
+    	    this.updateButtonState();
+    	});
+
+    	this.mustIncludeLowerCaseLetters.selectedProperty().addListener((observable, oldValue, newValue) -> {
+    	    this.updateButtonState();
+    	});
+
+    	this.mustIncludeUpperCaseLetters.selectedProperty().addListener((observable, oldValue, newValue) -> {
+    	    this.updateButtonState();
+    	});
+
+    	this.updateButtonState();
     	
     	this.generatePasswordButton.setOnAction(
     			(event) -> { 
@@ -71,6 +89,21 @@ public class MainWindow {
     	this.closeMenuItem.setOnAction((event) -> {
     	    this.handleClose();
     	});
+    }
+    
+    private boolean isInputValid() {
+        boolean hasValidLength = this.minimumLength.getText().matches("\\d+") && 
+                                 Integer.parseInt(this.minimumLength.getText()) > 0;
+        
+        boolean hasAtLeastOneCheckbox = this.vm.getRequireDigits().getValue() || 
+                                         this.vm.getRequireLowercase().getValue() || 
+                                         this.vm.getRequireUppercase().getValue();
+        
+        return hasValidLength && hasAtLeastOneCheckbox;
+    }
+    
+    private void updateButtonState() {
+        this.generatePasswordButton.setDisable(!this.isInputValid());
     }
     
     private void handleSave() {
