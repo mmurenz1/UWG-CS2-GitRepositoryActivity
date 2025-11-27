@@ -118,15 +118,26 @@ public class MainWindowViewModel {
 	 * @return A string representation of the contact found.
 	 */
 	public String findContact() {
-		if (!Contact.checkName(this.searchCriteria.get()) && !Contact.checkPhoneNumber(this.searchCriteria.get())) {
-			throw new IllegalArgumentException("Search criteria is not a valid name or phone number");
-		}
-		for (Contact currContact : this.contacts.get()) {
-			if (currContact.getName().equals(this.searchCriteria.get()) || currContact.getPhoneNumber().equals(this.searchCriteria.get())) {
-				return currContact.toString();
-			}
-		}
-		return "No contact found.";
+	    if (!Contact.checkName(this.searchCriteria.get()) 
+	            && !Contact.checkPhoneNumber(this.searchCriteria.get())) {
+	        throw new IllegalArgumentException("Search criteria is not a valid name or phone number");
+	    }
+	    
+	    String searchText = this.searchCriteria.get();
+	    Contact foundContact = null;
+	    
+	    if (this.contactsByName.containsKey(searchText)) {
+	        foundContact = this.contactsByName.get(searchText);
+	    }
+	    else if (this.contactsByPhone.containsKey(searchText)) {
+	        foundContact = this.contactsByPhone.get(searchText);
+	    }
+	    
+	    if (foundContact != null) {
+	        return foundContact.toString();
+	    }
+	    
+	    return "No contact found.";
 	}
 	
 }
