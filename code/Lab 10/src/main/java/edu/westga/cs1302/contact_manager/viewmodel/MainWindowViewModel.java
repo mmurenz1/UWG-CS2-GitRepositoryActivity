@@ -4,9 +4,7 @@ import java.util.ArrayList;
 
 import edu.westga.cs1302.contact_manager.model.Contact;
 import javafx.beans.property.ListProperty;
-import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleListProperty;
-import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
@@ -128,8 +126,7 @@ public class MainWindowViewModel {
 	    
 	    if (this.contactsByName.containsKey(searchText)) {
 	        foundContact = this.contactsByName.get(searchText);
-	    }
-	    else if (this.contactsByPhone.containsKey(searchText)) {
+	    } else if (this.contactsByPhone.containsKey(searchText)) {
 	        foundContact = this.contactsByPhone.get(searchText);
 	    }
 	    
