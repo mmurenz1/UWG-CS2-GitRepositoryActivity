@@ -44,7 +44,15 @@ public class MainWindow {
 
     @FXML
     void initialize() {
-        // We'll add binding here in Task 1D
+        this.collectionNameTextField.textProperty().bindBidirectional(this.vm.collectionNameProperty());
+        this.collectionsListView.setItems(this.vm.getCollections());
+        this.collectionsListView.setCellFactory(lv -> new javafx.scene.control.ListCell<Collection>() {
+            @Override
+            protected void updateItem(Collection item, boolean empty) {
+                super.updateItem(item, empty);
+                setText(empty || item == null ? null : item.getName());
+            }
+        });
     }
 
     @FXML
