@@ -2,6 +2,7 @@ package edu.westga.cs1302.comic_collection.model;
 
 /**
  * Represents a comic book.
+ * Used for storing comic information and search operations.
  * 
  * @author Mickel Ishema Murenzi
  * @version Fall 2025
