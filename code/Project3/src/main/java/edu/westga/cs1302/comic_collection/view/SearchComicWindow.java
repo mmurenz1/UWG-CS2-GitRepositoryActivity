@@ -47,6 +47,22 @@ public class SearchComicWindow {
                 this.vm.searchIssueNumberProperty().set(Integer.parseInt(newValue));
             }
         });
+        
+        this.searchButton.setDisable(true);
+        
+        this.searchTitleTextField.textProperty().addListener((obs, old, newVal) -> {
+            this.updateSearchButton();
+        });
+        
+        this.searchIssueTextField.textProperty().addListener((obs, old, newVal) -> {
+            this.updateSearchButton();
+        });
+    }
+
+    private void updateSearchButton() {
+        boolean titleEmpty = this.searchTitleTextField.getText().trim().isEmpty();
+        boolean issueEmpty = this.searchIssueTextField.getText().trim().isEmpty();
+        this.searchButton.setDisable(titleEmpty || issueEmpty);
     }
 
     @FXML
