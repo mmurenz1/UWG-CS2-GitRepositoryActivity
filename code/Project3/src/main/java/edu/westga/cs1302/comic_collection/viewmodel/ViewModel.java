@@ -25,6 +25,8 @@ public class ViewModel {
     private IntegerProperty comicIssueNumber;
     private ObservableList<Comic> comicsInSelectedCollection;
     private Comic selectedComic;
+    private StringProperty searchTitle;
+    private IntegerProperty searchIssueNumber;
 
     /**
      * Creates a new ViewModel.
@@ -43,6 +45,9 @@ public class ViewModel {
         this.comicIssueNumber = new SimpleIntegerProperty(0);
         this.comicsInSelectedCollection = FXCollections.observableArrayList();
         this.selectedComic = null;
+        
+        this.searchTitle = new SimpleStringProperty("");
+        this.searchIssueNumber = new SimpleIntegerProperty(0);
     }
     /**
      * Gets the collection name property.
@@ -159,5 +164,13 @@ public class ViewModel {
         
         String searchKey = title + "-" + issueNumber;
         return comicMap.get(searchKey);
+    }
+    
+    public StringProperty searchTitleProperty() {
+        return this.searchTitle;
+    }
+
+    public IntegerProperty searchIssueNumberProperty() {
+        return this.searchIssueNumber;
     }
 }

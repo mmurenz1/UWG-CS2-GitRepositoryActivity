@@ -38,13 +38,22 @@ public class SearchComicWindow {
 
     @FXML
     void initialize() {
+        this.searchTitleTextField.textProperty().bindBidirectional(this.vm.searchTitleProperty());
+        
+        this.searchIssueTextField.textProperty().addListener((observable, oldValue, newValue) -> {
+            if (!newValue.matches("\\d*")) {
+                this.searchIssueTextField.setText(oldValue);
+            } else if (!newValue.isEmpty()) {
+                this.vm.searchIssueNumberProperty().set(Integer.parseInt(newValue));
+            }
+        });
     }
 
     @FXML
     void handleSearch() {
         try {
-            String title = this.searchTitleTextField.getText();
-            int issueNumber = Integer.parseInt(this.searchIssueTextField.getText());
+            String title = this.vm.searchTitleProperty().get();
+            int issueNumber = this.vm.searchIssueNumberProperty().get();
             
             Comic found = this.vm.findComic(title, issueNumber);
             
@@ -53,8 +62,8 @@ public class SearchComicWindow {
             } else {
                 this.resultLabel.setText("Comic not found");
             }
-        } catch (NumberFormatException e) {
-            this.resultLabel.setText("Invalid issue number");
+        } catch (Exception e) {
+            this.resultLabel.setText("Invalid input");
         }
     }
 
