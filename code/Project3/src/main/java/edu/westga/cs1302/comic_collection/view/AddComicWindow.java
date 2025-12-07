@@ -42,6 +42,22 @@ public class AddComicWindow {
                 this.vm.comicIssueNumberProperty().set(Integer.parseInt(newValue));
             }
         });
+        
+        this.confirmButton.setDisable(true);
+        
+        this.titleTextField.textProperty().addListener((obs, old, newVal) -> {
+            this.updateConfirmButton();
+        });
+        
+        this.issueNumberTextField.textProperty().addListener((obs, old, newVal) -> {
+            this.updateConfirmButton();
+        });
+    }
+
+    private void updateConfirmButton() {
+        boolean titleEmpty = this.titleTextField.getText().trim().isEmpty();
+        boolean issueEmpty = this.issueNumberTextField.getText().trim().isEmpty();
+        this.confirmButton.setDisable(titleEmpty || issueEmpty);
     }
 
     @FXML
@@ -51,7 +67,6 @@ public class AddComicWindow {
             Stage stage = (Stage) this.confirmButton.getScene().getWindow();
             stage.close();
         } catch (Exception e) {
-            // Error handling
         }
     }
 
