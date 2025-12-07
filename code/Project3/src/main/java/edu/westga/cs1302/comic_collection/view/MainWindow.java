@@ -1,46 +1,65 @@
 package edu.westga.cs1302.comic_collection.view;
 
+import edu.westga.cs1302.comic_collection.model.Collection;
 import edu.westga.cs1302.comic_collection.viewmodel.ViewModel;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
+import javafx.scene.control.ListView;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
 
-/** Codebehind for the MainWindow of the Application.
+/**
+ * Code-behind for the MainWindow of the Comic Collection application.
  * 
- * @author CS 1302
+ * @author Mickel Ishema Murenzi
  * @version Fall 2025
  */
 public class MainWindow {
-
-    @FXML private CheckBox mustIncludeDigits;
-    @FXML private CheckBox mustIncludeLowerCaseLetters;
-    @FXML private CheckBox mustIncludeUpperCaseLetters;
-    @FXML private TextField minimumLength;
-    @FXML private TextArea output;
-    @FXML private Label errorTextLabel;
-    @FXML private Button generatePasswordButton;
-    
-    private ViewModel vm;
+    @FXML
+    private TextField collectionNameTextField;
     
     @FXML
+    private Button addCollectionButton;
+    
+    @FXML
+    private ListView<Collection> collectionsListView;
+    
+    @FXML
+    private Button removeCollectionButton;
+    
+    @FXML
+    private MenuItem removeMenuItem;
+    
+    private ViewModel vm;
+
+    /**
+     * Creates a new MainWindow.
+     * 
+     * @precondition none
+     * @postcondition the window is initialized
+     */
+    public MainWindow() {
+        this.vm = new ViewModel();
+    }
+
+    @FXML
     void initialize() {
-    	this.vm = new ViewModel();
-    	this.vm.getRequireDigits().bind(this.mustIncludeDigits.selectedProperty());
-    	this.vm.getRequireLowercase().bind(this.mustIncludeLowerCaseLetters.selectedProperty());
-    	this.vm.getRequireUppercase().bind(this.mustIncludeUpperCaseLetters.selectedProperty());
-    	this.minimumLength.setText(this.vm.getMinimumLength().getValue());
-    	this.vm.getMinimumLength().bind(this.minimumLength.textProperty());
-    	
-    	this.output.textProperty().bind(this.vm.getPassword());
-    	this.errorTextLabel.textProperty().bind(this.vm.getErrorText());
-    	
-    	this.generatePasswordButton.setOnAction(
-    			(event) -> { 
-    				this.vm.generatePassword();
-    			} 
-    	);
+        // We'll add binding here in Task 1D
+    }
+
+    @FXML
+    void handleAddCollection() {
+        try {
+            this.vm.addCollection();
+        } catch (IllegalArgumentException error) {
+            // TODO: Add error handling in later tasks
+        }
+    }
+
+    @FXML
+    void handleRemoveCollection() {
+        Collection selected = this.collectionsListView.getSelectionModel().getSelectedItem();
+        this.vm.setSelectedCollection(selected);
+        this.vm.removeSelectedCollection();
     }
 }

@@ -14,7 +14,7 @@ import javafx.stage.Stage;
  * @version Fall 2025
  */
 public class Main extends Application {
-	private static final String WINDOW_TITLE = "Password Generator";
+	private static final String WINDOW_TITLE = "Comic Collection Manager";
 	private static final String GUI_RESOURCE = "view/MainWindow.fxml";
 
 	/**
