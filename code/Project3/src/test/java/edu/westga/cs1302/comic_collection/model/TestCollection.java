@@ -31,4 +31,35 @@ class TestCollection {
             new Collection("");
         });
     }
+    
+    @Test
+    void testAddComic() {
+        Collection collection = new Collection("Marvel");
+        Comic comic = new Comic("Spider-Man", 1);
+        
+        collection.addComic(comic);
+        
+        assertEquals(1, collection.getComics().size());
+        assertEquals(comic, collection.getComics().get(0));
+    }
+
+    @Test
+    void testAddNullComic() {
+        Collection collection = new Collection("Marvel");
+        
+        assertThrows(IllegalArgumentException.class, () -> {
+            collection.addComic(null);
+        });
+    }
+
+    @Test
+    void testRemoveComic() {
+        Collection collection = new Collection("Marvel");
+        Comic comic = new Comic("Spider-Man", 1);
+        collection.addComic(comic);
+        
+        collection.removeComic(comic);
+        
+        assertEquals(0, collection.getComics().size());
+    }
 }
