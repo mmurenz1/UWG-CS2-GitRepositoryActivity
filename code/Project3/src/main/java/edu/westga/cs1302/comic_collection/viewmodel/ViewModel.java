@@ -5,6 +5,9 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import edu.westga.cs1302.comic_collection.model.Comic;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.IntegerProperty;
 
 /**
  * ViewModel for the Comic Collection application.
@@ -16,6 +19,10 @@ public class ViewModel {
     private StringProperty collectionName;
     private ObservableList<Collection> collections;
     private Collection selectedCollection;
+    private StringProperty comicTitle;
+    private IntegerProperty comicIssueNumber;
+    private ObservableList<Comic> comicsInSelectedCollection;
+    private Comic selectedComic;
 
     /**
      * Creates a new ViewModel.
@@ -29,8 +36,12 @@ public class ViewModel {
         this.collectionName = new SimpleStringProperty("");
         this.collections = FXCollections.observableArrayList();
         this.selectedCollection = null;
+        
+        this.comicTitle = new SimpleStringProperty("");
+        this.comicIssueNumber = new SimpleIntegerProperty(0);
+        this.comicsInSelectedCollection = FXCollections.observableArrayList();
+        this.selectedComic = null;
     }
-
     /**
      * Gets the collection name property.
      * 
@@ -92,6 +103,44 @@ public class ViewModel {
         if (this.selectedCollection != null) {
             this.collections.remove(this.selectedCollection);
             this.selectedCollection = null;
+        }
+    }
+    
+    public StringProperty comicTitleProperty() {
+        return this.comicTitle;
+    }
+
+    public IntegerProperty comicIssueNumberProperty() {
+        return this.comicIssueNumber;
+    }
+
+    public ObservableList<Comic> getComicsInSelectedCollection() {
+        return this.comicsInSelectedCollection;
+    }
+
+    public Comic getSelectedComic() {
+        return this.selectedComic;
+    }
+
+    public void setSelectedComic(Comic comic) {
+        this.selectedComic = comic;
+    }
+
+    public void addComic() {
+        String title = this.comicTitle.get();
+        int issueNumber = this.comicIssueNumber.get();
+        Comic newComic = new Comic(title, issueNumber);
+        this.selectedCollection.addComic(newComic);
+        this.comicsInSelectedCollection.add(newComic);
+        this.comicTitle.set("");
+        this.comicIssueNumber.set(0);
+    }
+
+    public void removeSelectedComic() {
+        if (this.selectedComic != null) {
+            this.selectedCollection.removeComic(this.selectedComic);
+            this.comicsInSelectedCollection.remove(this.selectedComic);
+            this.selectedComic = null;
         }
     }
 }

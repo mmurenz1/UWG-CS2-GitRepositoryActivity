@@ -6,6 +6,8 @@ import org.junit.jupiter.api.Test;
 
 import edu.westga.cs1302.comic_collection.model.Collection;
 
+import edu.westga.cs1302.comic_collection.model.Comic;
+
 /**
  * Tests for the ViewModel class.
  * 
@@ -85,5 +87,42 @@ class TestViewModel {
         vm.setSelectedCollection(collection);
         
         assertEquals(collection, vm.getSelectedCollection());
+    }
+    
+    @Test
+    void testAddComic() {
+        ViewModel vm = new ViewModel();
+        vm.collectionNameProperty().set("Marvel");
+        vm.addCollection();
+        vm.setSelectedCollection(vm.getCollections().get(0));
+        
+        vm.comicTitleProperty().set("Spider-Man");
+        vm.comicIssueNumberProperty().set(1);
+        vm.addComic();
+        
+        assertEquals(1, vm.getComicsInSelectedCollection().size());
+        assertEquals("Spider-Man", vm.getComicsInSelectedCollection().get(0).getTitle());
+        assertEquals(1, vm.getComicsInSelectedCollection().get(0).getIssueNumber());
+        assertEquals("", vm.comicTitleProperty().get());
+        assertEquals(0, vm.comicIssueNumberProperty().get());
+    }
+
+    @Test
+    void testRemoveSelectedComic() {
+        ViewModel vm = new ViewModel();
+        vm.collectionNameProperty().set("Marvel");
+        vm.addCollection();
+        vm.setSelectedCollection(vm.getCollections().get(0));
+        
+        vm.comicTitleProperty().set("Spider-Man");
+        vm.comicIssueNumberProperty().set(1);
+        vm.addComic();
+        
+        Comic toRemove = vm.getComicsInSelectedCollection().get(0);
+        vm.setSelectedComic(toRemove);
+        vm.removeSelectedComic();
+        
+        assertEquals(0, vm.getComicsInSelectedCollection().size());
+        assertNull(vm.getSelectedComic());
     }
 }
