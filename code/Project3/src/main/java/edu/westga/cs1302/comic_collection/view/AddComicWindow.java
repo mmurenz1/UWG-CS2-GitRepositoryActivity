@@ -33,7 +33,15 @@ public class AddComicWindow {
 
     @FXML
     void initialize() {
-        // Binding will be added in Task 2D
+        this.titleTextField.textProperty().bindBidirectional(this.vm.comicTitleProperty());
+        
+        this.issueNumberTextField.textProperty().addListener((observable, oldValue, newValue) -> {
+            if (!newValue.matches("\\d*")) {
+                this.issueNumberTextField.setText(oldValue);
+            } else if (!newValue.isEmpty()) {
+                this.vm.comicIssueNumberProperty().set(Integer.parseInt(newValue));
+            }
+        });
     }
 
     @FXML
