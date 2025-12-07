@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane minHeight="298.0" minWidth="340.0" prefHeight="298.0" prefWidth="452.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.westga.cs1302.e3.view.MainWindow">
+   <children>
+      <TextField fx:id="nameTextField" layoutX="14.0" layoutY="20.0" />
+      <Button fx:id="displayDetailsButton" layoutX="124.0" layoutY="264.0" mnemonicParsing="false" text="Display Student Details" />
+      <Label layoutX="68.0" layoutY="2.0" text="Name" />
+      <ListView fx:id="studentsListView" layoutX="15.0" layoutY="52.0" prefHeight="200.0" prefWidth="312.0" />
+      <ComboBox fx:id="gpaComboBox" layoutX="176.0" layoutY="19.0" prefWidth="150.0" />
+      <Label layoutX="237.0" layoutY="2.0" text="GPA" />
+      <Button fx:id="addStudentButton" layoutX="340.0" layoutY="20.0" mnemonicParsing="false" text="Add Student" />
+   </children>
+</AnchorPane>

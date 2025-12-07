@@ -53,6 +53,11 @@ public class MainWindow {
                 setText(empty || item == null ? null : item.getName());
             }
         });
+        
+        this.addCollectionButton.setDisable(true);
+        this.collectionNameTextField.textProperty().addListener((observable, oldValue, newValue) -> {
+            this.addCollectionButton.setDisable(newValue.trim().isEmpty());
+        });
     }
 
     @FXML
