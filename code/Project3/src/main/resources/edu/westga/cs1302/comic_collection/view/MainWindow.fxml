@@ -42,5 +42,6 @@
       
       <Button fx:id="addComicButton" layoutX="280.0" layoutY="270.0" mnemonicParsing="false" onAction="#handleAddComicWindow" text="Add Comic" />
       <Button fx:id="removeComicButton" layoutX="370.0" layoutY="270.0" mnemonicParsing="false" onAction="#handleRemoveComic" text="Remove Comic" />
+      <Button fx:id="searchComicButton" layoutX="480.0" layoutY="270.0" mnemonicParsing="false" onAction="#handleSearchComic" text="Search Comic" />
    </children>
 </AnchorPane>

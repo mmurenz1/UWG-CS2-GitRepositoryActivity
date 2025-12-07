@@ -48,6 +48,9 @@ public class MainWindow {
     @FXML
     private MenuItem removeComicMenuItem;
     
+    @FXML
+    private Button searchComicButton;
+    
     private ViewModel vm;
 
     public MainWindow() {
@@ -126,5 +129,23 @@ public class MainWindow {
         Comic selected = this.comicsListView.getSelectionModel().getSelectedItem();
         this.vm.setSelectedComic(selected);
         this.vm.removeSelectedComic();
+    }
+    
+    @FXML
+    void handleSearchComic() {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(MainWindow.class.getResource("SearchComicWindow.fxml"));
+            loader.setControllerFactory(c -> new SearchComicWindow(this.vm));
+            Parent parent = loader.load();
+            
+            Stage stage = new Stage();
+            stage.setTitle("Search Comic");
+            stage.setScene(new Scene(parent));
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.showAndWait();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
