@@ -125,4 +125,47 @@ class TestViewModel {
         assertEquals(0, vm.getComicsInSelectedCollection().size());
         assertNull(vm.getSelectedComic());
     }
+    
+    @Test
+    void testFindComicFound() {
+        ViewModel vm = new ViewModel();
+        vm.collectionNameProperty().set("Marvel");
+        vm.addCollection();
+        vm.setSelectedCollection(vm.getCollections().get(0));
+        
+        vm.comicTitleProperty().set("Spider-Man");
+        vm.comicIssueNumberProperty().set(1);
+        vm.addComic();
+        
+        Comic found = vm.findComic("Spider-Man", 1);
+        
+        assertNotNull(found);
+        assertEquals("Spider-Man", found.getTitle());
+        assertEquals(1, found.getIssueNumber());
+    }
+
+    @Test
+    void testFindComicNotFound() {
+        ViewModel vm = new ViewModel();
+        vm.collectionNameProperty().set("Marvel");
+        vm.addCollection();
+        vm.setSelectedCollection(vm.getCollections().get(0));
+        
+        vm.comicTitleProperty().set("Spider-Man");
+        vm.comicIssueNumberProperty().set(1);
+        vm.addComic();
+        
+        Comic found = vm.findComic("Batman", 1);
+        
+        assertNull(found);
+    }
+
+    @Test
+    void testFindComicNoCollectionSelected() {
+        ViewModel vm = new ViewModel();
+        
+        Comic found = vm.findComic("Spider-Man", 1);
+        
+        assertNull(found);
+    }
 }

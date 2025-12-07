@@ -8,6 +8,8 @@ import javafx.collections.ObservableList;
 import edu.westga.cs1302.comic_collection.model.Comic;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.IntegerProperty;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * ViewModel for the Comic Collection application.
@@ -142,5 +144,20 @@ public class ViewModel {
             this.comicsInSelectedCollection.remove(this.selectedComic);
             this.selectedComic = null;
         }
+    }
+    
+    public Comic findComic(String title, int issueNumber) {
+        if (this.selectedCollection == null) {
+            return null;
+        }
+        
+        Map<String, Comic> comicMap = new HashMap<>();
+        for (Comic comic : this.selectedCollection.getComics()) {
+            String key = comic.getTitle() + "-" + comic.getIssueNumber();
+            comicMap.put(key, comic);
+        }
+        
+        String searchKey = title + "-" + issueNumber;
+        return comicMap.get(searchKey);
     }
 }
